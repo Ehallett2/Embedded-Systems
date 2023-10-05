@@ -59,6 +59,8 @@ void dot()
         greenLED = 0;           // LED OFF
         buzz.rest();            // Stop tone
         wait_us(150000);        // Wait 150ms
+
+        
 }
 
 // Send one dash symbol
