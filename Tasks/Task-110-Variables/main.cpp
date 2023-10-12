@@ -18,24 +18,33 @@ DigitalIn BlueButton(USER_BUTTON);
 
 BusOut ledData(LED_D0_PIN, LED_D1_PIN, LED_D2_PIN, LED_D3_PIN, LED_D4_PIN, LED_D5_PIN, LED_D6_PIN, LED_D7_PIN);
 
+void ASCII_Printer(char Character);
 
 int main()
 {
     printf("\nTASK-110\n");
 
     // Integer
-    int count = 0;
+    int count = 10;
     printf("count = %d\n", count);
 
     // Add one to count
-    count = count + 1;
+    count = count + 2;
     printf("New value of count = %d\n", count);
 
-    // Char
+    // Char (A)
     char character;
     character = 'A';
-    printf("The character %c has the ASCII code %d\n", character, character);
+    //printf("The character %c has the ASCII code %d\n", character, character);
 
+    ASCII_Printer('A');
+    ASCII_Printer('Z');
+    ASCII_Printer('a');
+    ASCII_Printer('z');
+    ASCII_Printer('0');
+    ASCII_Printer('9');
+
+    
     // Short
     short shortCount = 32766;
     printf("The value of shortCount is %hd\n", shortCount);
@@ -47,11 +56,11 @@ int main()
     printf("A very large number %lld\n", NN);
     printf("A very large number in hex %llX\n", NN);
 
-    // unsigned
-    unsigned short p = 1; //16 bit
-    printf("unsigned int p = %u\n", p);
+    // unsigned deleted, changed to signed
+    short p = 1; //16 bit
+    printf("unsigned int p = %d\n", p);
     p = p - 2;
-    printf("Subtract 2. Now unsigned int p = %u\n", p);
+    printf("Subtract 2. Now unsigned int p = %d\n", p);
 
     // float 
     float pi_float = 3.1415926536;
@@ -70,6 +79,16 @@ int main()
     printf("Size of a float is %d bytes\n", sizeof(float));
     printf("Size of a double is %d bytes\n", sizeof(double));
 
+    printf("\nEnd of String\n");
+
     // Stop
     while (true);   
+}
+
+
+//int result=myfunction("anykey");
+//
+
+void ASCII_Printer(char Character){
+        printf("The character %c has the ASCII code %d\n", Character, Character);// if you wish hexadecimal then use 0x%X instead of %d
 }
