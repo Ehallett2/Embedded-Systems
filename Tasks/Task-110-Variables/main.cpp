@@ -20,12 +20,16 @@ BusOut ledData(LED_D0_PIN, LED_D1_PIN, LED_D2_PIN, LED_D3_PIN, LED_D4_PIN, LED_D
 
 void ASCII_Printer(char Character);
 
+typedef char int8;
+typedef short int16;
+typedef int int32;
+
 int main()
 {
     printf("\nTASK-110\n");
 
     // Integer
-    int count = 10;
+    int32 count = 10;
     printf("count = %d\n", count);
 
     // Add one to count
@@ -33,7 +37,7 @@ int main()
     printf("New value of count = %d\n", count);
 
     // Char (A)
-    char character;
+    int8 character;
     character = 'A';
     //printf("The character %c has the ASCII code %d\n", character, character);
 
@@ -45,19 +49,19 @@ int main()
     ASCII_Printer('9');
 
     
-    // Short
-    short shortCount = 32766;
+    // Short (added unsigned and changed to int, removed unsigned)
+    int shortCount = 32766;
     printf("The value of shortCount is %hd\n", shortCount);
-    shortCount = shortCount + 1;
+    shortCount = shortCount + 2;
     printf("add 1 and shortCount is %hd\n", shortCount);
 
     // Long long
     long long NN = 0x12345678ABCD0001LL; //Literal in HEX
-    printf("A very large number %lld\n", NN);
+    printf("A very large number %11d\n", NN);
     printf("A very large number in hex %llX\n", NN);
 
     // unsigned deleted, changed to signed
-    short p = 1; //16 bit
+    int16 p = 1; //16 bit
     printf("unsigned int p = %d\n", p);
     p = p - 2;
     printf("Subtract 2. Now unsigned int p = %d\n", p);
@@ -71,9 +75,9 @@ int main()
     printf("The value of pi is approximately %.20lf\n", pi_double);
 
     // Data type sizes (in bytes)
-    printf("Size of a char is %d bytes\n", sizeof(char));
-    printf("Size of a short is %d bytes\n", sizeof(short));
-    printf("Size of a int is %d bytes\n", sizeof(int));
+    printf("Size of a char is %d bytes\n", sizeof(int8));
+    printf("Size of a short is %d bytes\n", sizeof(int16));
+    printf("Size of a int is %d bytes\n", sizeof(int32));
     printf("Size of a long is %d bytes\n", sizeof(long));
     printf("Size of a long long is %d bytes\n", sizeof(long long));
     printf("Size of a float is %d bytes\n", sizeof(float));
