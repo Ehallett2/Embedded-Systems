@@ -64,11 +64,11 @@ int main()
 
     // float 
     float pi_float = 3.1415926536;
-    printf("The value of pi is approximately %f\n", pi_float);
+    printf("The value of pi is approximately %.20f\n", pi_float);
 
-    // double
-    double pi_double = 3.1415926536l;
-    printf("The value of pi is approximately %lf\n", pi_double);
+    // double precision
+    double pi_double = 3.14159265358979323846l;
+    printf("The value of pi is approximately %.20lf\n", pi_double);
 
     // Data type sizes (in bytes)
     printf("Size of a char is %d bytes\n", sizeof(char));
