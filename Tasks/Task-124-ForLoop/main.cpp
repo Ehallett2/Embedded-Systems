@@ -13,20 +13,23 @@ int main()
     do {
         //Pattern Value 
          printf("\n\nEnter a 'pattern' integer between 0 and 7\n\n");
-         scanf("%d", &pattern);
+         scanf("%d", &pattern);  
+         printf("\npattern = %d\n", pattern);          
 
          //Count Value
           printf("\n\nEnter a 'count' integer between 5 and 20\n\n");
           scanf("%d", &count);
+          printf("\ncount = %d\n", count);
 
           //Delay Value
           printf("\n\nEnter a 'delay' integer between 50 and 2000\n\n");
           scanf("%d", &delay);
+          printf("\ndelay = %d\n", delay);
+
 
           //While conditions
-     } while((pattern >=0) || (pattern <=7) || (count >=5) || (count<=20) || (delay >=50) || (delay <=2000));
+     } while((pattern <0) || (pattern >8) || (count <4) || (count>21) || (delay <49) || (delay >2000));
              
-    
 
     while (true) {
 
@@ -35,10 +38,14 @@ int main()
                 printf("n=%d\n", n);
                 leds = pattern;
                 wait_us(delay);
+                leds = 0;
+                if(n == count)
+                    break;
         }
 
         //2s pause
         wait_us(2000000);
+        
     }
 }
 
