@@ -16,6 +16,9 @@ int main()
         //Toggle LED
         redLED = !redLED;
 
+        //Waiting for noise (100ms)
+        wait_us(100000);
+
         //Wait for release
         while (ButtonA==1) { };
     }
