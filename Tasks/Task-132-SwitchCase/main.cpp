@@ -34,16 +34,16 @@ int main()
             //Nothing pressed
             greenLED = 0;
             yellowLED = 0;
-            redLED = !redLED;
+            redLED = 0;
             break;
 
             case 1:
             //Button A only
-            redLED = 0;
+            greenLED = 0;
             yellowLED = 0;            
-            greenLED = !greenLED;
+            redLED = !redLED;
             break;
-
+        
             case 3: 
             //Button A and B
             redLED = 0;
@@ -51,11 +51,24 @@ int main()
             greenLED = 0;
             break;
 
+            case 5:
+            //Button C only 
+            redLED = 0;
+            yellowLED = 0;
+            greenLED = !greenLED;
+
+
+            case 2:
+            //Button B only
+            greenLED = 0;
+            redLED = 0;
+            yellowLED = !yellowLED;
+
             default:
             //All others
-            greenLED = 0;
-            yellowLED = 0;
-            redLED = 0;
+            greenLED = 1;
+            yellowLED = 1;
+            redLED = 1;
             break;
 
         }
