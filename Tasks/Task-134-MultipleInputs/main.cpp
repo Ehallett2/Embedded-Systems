@@ -16,7 +16,7 @@ LatchedLED disp(LatchedLED::SEVEN_SEG);
 
 int main()
 {
-    volatile int count = 0;
+    int count = 0;
 
     // This little C++ trick allows us to use BOTH BusIn and DigitalIn
     DigitalIn& buttonA = buttons[0];    //ButtonA is synonamous with buttons[0]
@@ -43,23 +43,18 @@ int main()
         disp = count;
         
         //Wait for button A
-        while (buttonA == 0) {
-        } 
-
-        if (count > 0 ) {
-            count -= 1;
+        while ((buttonA == 1) && (count < 100)) {
+            count++;
+               
         }
 
         //Wait for button B
-        while (buttonB == 0) {
-        }
-
-        if (count < 99 ) {
-            count += 1;
-        } 
+        while ((buttonB == 1) && (count > 0)) {
+            count--;
+            } 
 
         //Reset condition
-        if ((buttonA == 1) && (buttonB == 1)) {
+        if ((buttonA == 1) && (buttonB == 1)){
             count = 0;
         }
 
