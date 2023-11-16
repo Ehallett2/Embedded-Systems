@@ -1,4 +1,5 @@
 #include "uop_msb.h"
+
 using namespace uop_msb;
 
 BusIn buttons(PG_0, PG_1, PG_2, PG_3);
@@ -44,28 +45,50 @@ int main()
             redLED = !redLED;
             break;
         
-            case 3: 
-            //Button A and B
+            case 2: 
+            //Button B only
             redLED = 0;
             yellowLED = !yellowLED;            
             greenLED = 0;
             break;
 
-            case 5:
+            case 4:
             //Button C only 
             redLED = 0;
             yellowLED = 0;
             greenLED = !greenLED;
+            break;
 
-
-            case 2:
-            //Button B only
-            greenLED = 0;
-            redLED = 0;
+            case 8:
+            //Button D only
+            greenLED = !greenLED;
+            redLED = !redLED;
             yellowLED = !yellowLED;
+            break;
+
+            case 9:
+            //Any combination with D pressed
+            greenLED = !greenLED;
+            redLED = !redLED;
+            yellowLED = !yellowLED;
+            break;
+
+            case 10:
+            //Any combination with D pressed
+            greenLED = !greenLED;
+            redLED = !redLED;
+            yellowLED = !yellowLED;
+            break;
+
+            case 12:
+            //Any combination with D pressed
+            greenLED = !greenLED;
+            redLED = !redLED;
+            yellowLED = !yellowLED;
+            break;
 
             default:
-            //All others
+            //All other combinations
             greenLED = 1;
             yellowLED = 1;
             redLED = 1;
